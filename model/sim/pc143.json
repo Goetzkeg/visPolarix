@@ -1,0 +1,96 @@
+{
+  "info": "pc115Sim",
+  "dataset": {
+    "dataset_type": "PolarixDatasetSim_setlong",
+    "files_main": {
+      "desy": "/home/goetzkeg/",
+      "max": "/asap3/flash/gpfs/fl21/2021/data/11012601/raw/hdf/Aug25/",
+      "hzb": "/scratch/polarix/data-2021-08/",
+      "hzb_mem": "/dev/shm/polarix/data-2021-08/"
+    },
+    "dataset_len": -1,
+    "dataset_kwargs": {
+	"num_val": 300,
+	"normv": 605
+	},
+    "dataloader": {
+      "batch_size": 128,
+      "num_workers": 0,
+      "pin_memory": false,
+      "shuffle": true
+    }
+  },
+  "results_dir": {
+    "max": "/beegfs/desy/user/goetzkeg/polarix_res/",
+    "max_petra3": "/gpfs/petra3/scratch/goetzkeg/polarix_res/",
+    "home": "./polarix_res/",
+    "desy": "./polarix_res/",
+    "hzb": "./polarix_res/",
+    "hzb_mem": "./polarix_res/"
+  },
+  "fit": {
+    "model": "conv2d",
+    "device": "cuda",
+    "model_param": {
+      "device": "cuda",
+      "train": true,
+      "activations": "mish",
+      "conv_sizes_encoder": [
+        5,
+        5
+      ],
+      "conv_nr_encoder": [
+        1,
+        8,
+        20
+      ],
+      "conv_strides_encoder": [
+        1,
+        1
+      ],
+      "pooling_kernel_size": [
+        3,
+        3
+      ],
+      "pooling_stride": [
+        3,
+        3
+      ],
+      "ful_cn_nodes_encoder": [
+        -1,
+        311,
+        20
+      ]
+    },
+    "train_param": {
+      "epochs": 1200001,
+      "beta": 0.5,
+      "learning_rate_0": 1e-6,
+      "scheduler_step_size": 1500006,
+      "scheduler_gamma": 0.9,
+      "savesteps": 200,
+      "valsteps":50,	
+      "device": "cuda"
+    }
+  },
+  "load_model": {
+    "load_model": false,
+    "load_weights": false,
+    "load_loc": "max",
+    "load_id": "pc085",
+    "epoch": -1
+  },
+  "run_to_preprocessing" : {
+        "39924": "id",
+        "39925": "mirror",
+        "39926": "mirror",
+        "39927": "id",
+        "39928": "id",
+        "39929": "mirror",
+        "39930": "mirror",       
+        "39932": "id",      
+        "39933": "id",             
+        "39934": "mirror",  
+        "39935": "id"    
+        }
+}
